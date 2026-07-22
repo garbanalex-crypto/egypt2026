@@ -17,30 +17,43 @@
 
 <link rel="stylesheet" href="style.css">
 
-</head>
+<style>
+  .music-toggle-btn {
+      margin-bottom: 15px; 
+      padding: 10px 20px; 
+      font-size: 1rem; 
+      border-radius: 20px; 
+      cursor: pointer; 
+      background: rgba(255,255,255,0.2); 
+      color: white; 
+      border: 1px solid white; 
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 9999;
+  }
+</style>
 
+</head>
 <body>
 
-<div class="background"></div>
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="particles"></div>
 
-<div class="overlay"></div>
+    <div class="plane">
+        ✈️
+    </div>
 
-<div class="particles"></div>
+    <header class="hero">
+        <button id="musicBtn" class="music-toggle-btn">
+            🎵 Play / Pause
+        </button>
+        <audio id="music" loop>
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
 
-<div class="plane">
-✈️
-</div>
-
-<header class="hero">
-    <button id="musicBtn" style="margin-bottom: 15px; padding: 10px 20px; font-size: 1rem; border-radius: 20px; cursor: pointer; background: rgba(255,255,255,0.2); color: white; border: 1px solid white; backdrop-filter: blur(5px);">
-        🎵 Play / Pause
-    </button>
-    <audio id="music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
-
-    <h1>🇪🇬 EGIPT 2026 🇪🇬</h1>
-    <h2>Hurghada, venim!</h2>
+        <h1>🇪🇬 EGIPT 2026 🇪🇬</h1>
+        <h2>Hurghada, venim!</h2>
 
     <p>
         Alex ❤️ Flory<br>
