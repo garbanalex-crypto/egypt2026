@@ -237,7 +237,92 @@ Se încarcă...
 
 </footer>
 
-<script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    // 1. COUNTDOWN
+    const targetDate = new Date("2026-08-05T19:40:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff > 0) {
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            if(document.getElementById("days")) document.getElementById("days").innerText = String(d).padStart(2, '0');
+            if(document.getElementById("hours")) document.getElementById("hours").innerText = String(h).padStart(2, '0');
+            if(document.getElementById("minutes")) document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+            if(document.getElementById("seconds")) document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+        }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 2. ORA EGIPTULUI
+    function updateEgyptTime() {
+        const options = { timeZone: 'Africa/Cairo', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        const egyptTimeString = new Intl.DateTimeFormat([], options).format(new Date());
+
+        const cards = document.querySelectorAll('div, section, .card, .time-card');
+        cards.forEach(card => {
+            if (card.innerText && card.innerText.includes("Ora Egiptului")) {
+                const pList = card.querySelectorAll('p, span, div, h3');
+                pList.forEach(p => {
+                    if (p.innerText.includes("00:00:00") || (p.innerText.includes(":") && !p.innerText.includes("Ora Egiptului"))) {
+                        p.innerText = egyptTimeString;
+                    }
+                });
+            }
+        });
+    }
+    setInterval(updateEgyptTime, 1000);
+    updateEgyptTime();
+
+    // 3. VREMEA
+    async function fetchWeather() {
+        try {
+            const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=27.2579&longitude=33.8116&current_weather=true');
+            const data = await res.json();
+            const temp = Math.round(data.current_weather.temperature);
+
+            const cards = document.querySelectorAll('div, section, .card');
+            cards.forEach(card => {
+                if (card.innerText && card.innerText.includes("Hurghada")) {
+                    const pList = card.querySelectorAll('p, span, div');
+                    pList.forEach(p => {
+                        if (p.innerText.includes("Se încarcă") || p.innerText.includes("--")) {
+                            p.innerText = temp + "°C";
+                        }
+                    });
+                }
+            });
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    fetchWeather();
+
+    // 4. MUSIC
+    const musicBtn = document.getElementById("musicBtn");
+    const music = document.getElementById("music");
+    if (musicBtn && music) {
+        musicBtn.addEventListener("click", () => {
+            if (music.paused) {
+                music.play();
+                musicBtn.innerText = "⏸️ Pause";
+            } else {
+                music.pause();
+                musicBtn.innerText = "🎵 Play";
+            }
+        });
+    }
+
+});
+</script>
 
 </body>
 
