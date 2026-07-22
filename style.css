@@ -14,7 +14,7 @@ body{
 .background{
     position:fixed;
     inset:0;
-    background:url("background.jpg") center center/cover no-repeat;
+    background:url("background.jpg") center 20%/cover no-repeat;
     filter:brightness(.85);
     animation:zoom 25s infinite alternate;
 }
