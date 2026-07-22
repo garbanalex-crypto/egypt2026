@@ -1099,3 +1099,54 @@ opacity:1;
 }
 
 }
+.show{
+
+opacity:1 !important;
+
+transform:translateY(0)!important;
+
+}
+
+.glass,
+.event,
+.card,
+.time-card,
+.gallery img{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:.8s;
+
+}
+
+body{
+
+opacity:0;
+
+transition:1s;
+
+}
+
+.celebrate{
+
+animation:celebrate 1s infinite alternate;
+
+}
+
+@keyframes celebrate{
+
+from{
+
+filter:saturate(1);
+
+}
+
+to{
+
+filter:saturate(1.25);
+
+}
+
+}
