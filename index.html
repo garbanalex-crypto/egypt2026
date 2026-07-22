@@ -233,22 +233,23 @@ Se încarcă...
 
 </footer>
 
-<script src="script.js"></script>
+<script>
+  const musicBtn = document.getElementById('musicBtn');
+  const music = document.getElementById('music');
+
+  if (musicBtn && music) {
+      musicBtn.addEventListener('click', () => {
+          if (music.paused) {
+              music.play();
+              musicBtn.innerText = '⏸️ Pause';
+          } else {
+              music.pause();
+              musicBtn.innerText = '▶️ Play / Pause';
+          }
+      });
+  }
+</script>
 
 </body>
 
 </html>
-const musicBtn = document.getElementById('musicBtn');
-const music = document.getElementById('music');
-
-if (musicBtn && music) {
-    musicBtn.addEventListener('click', () => {
-        if (music.paused) {
-            music.play();
-            musicBtn.innerText = '⏸️ Pause';
-        } else {
-            music.pause();
-            musicBtn.innerText = '▶️ Play / Pause';
-        }
-    });
-}
