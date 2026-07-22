@@ -220,20 +220,22 @@ Se încarcă...
 </footer>
 
 <script>
-  const musicBtn = document.getElementById('musicBtn');
-  const music = document.getElementById('music');
+  document.addEventListener("DOMContentLoaded", () => {
+    const musicBtn = document.getElementById('musicBtn');
+    const music = document.getElementById('music');
 
-  if (musicBtn && music) {
+    if (musicBtn && music) {
       musicBtn.addEventListener('click', () => {
-          if (music.paused) {
-              music.play();
-              musicBtn.innerText = '⏸️ Pause';
-          } else {
-              music.pause();
-              musicBtn.innerText = '▶️ Play / Pause';
-          }
+        if (music.paused) {
+          music.play();
+          musicBtn.innerText = '⏸️ Pause';
+        } else {
+          music.pause();
+          musicBtn.innerText = '▶️ Play / Pause';
+        }
       });
-  }
+    }
+  });
 </script>
 
 </body>
