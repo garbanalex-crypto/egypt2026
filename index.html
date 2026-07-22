@@ -3,65 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Egipt 2026 - Countdown</title>
+    <title>🇪🇬 Egipt 2026 Countdown</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="background"></div>
+<div class="bg"></div>
+<div class="overlay"></div>
 
-<div class="overlay">
+<div class="plane">✈️</div>
+
+<header class="hero">
 
     <h1>🇪🇬 EGIPT 2026 🇪🇬</h1>
 
     <h2>Hurghada, venim!</h2>
 
-    <div class="countdown">
+    <p class="subtitle">
+        Vacanța începe în...
+    </p>
 
-        <div class="box">
-            <span id="days">00</span>
-            <small>Zile</small>
-        </div>
+</header>
 
-        <div class="box">
-            <span id="hours">00</span>
-            <small>Ore</small>
-        </div>
+<section class="countdown">
 
-        <div class="box">
-            <span id="minutes">00</span>
-            <small>Minute</small>
-        </div>
+    <div class="card">
+        <span id="days">00</span>
+        <small>Zile</small>
+    </div>
 
-        <div class="box">
-            <span id="seconds">00</span>
-            <small>Secunde</small>
-        </div>
+    <div class="card">
+        <span id="hours">00</span>
+        <small>Ore</small>
+    </div>
+
+    <div class="card">
+        <span id="minutes">00</span>
+        <small>Minute</small>
+    </div>
+
+    <div class="card">
+        <span id="seconds">00</span>
+        <small>Secunde</small>
+    </div>
+
+</section>
+
+<section class="crew">
+
+    <h3>👨‍👩‍👧‍👦 Echipaj</h3>
+
+    <div class="people">
+
+        <div>❤️ Alex & Flory</div>
+
+        <div>❤️ Ionică & Oana</div>
 
     </div>
 
-    <div class="info">
+</section>
 
-        <h3>👥 Echipaj</h3>
+<section class="trip">
 
-        <p>❤️ Alex și Flory</p>
-        <p>❤️ Ionică și Oana</p>
-
-        <br>
-
+    <div class="box">
         <h3>✈️ Plecare</h3>
-
-        <p>📅 05.08.2026</p>
-
+        <p>📅 05 August 2026</p>
         <p>🕢 19:40</p>
+    </div>
+
+    <div class="box">
+        <h3>🌡️ Hurghada</h3>
+
+        <p id="weather">Se încarcă...</p>
+
+        <p id="temp"></p>
 
     </div>
 
-</div>
+    <div class="box">
+        <h3>🕒 Ora Egipt</h3>
+
+        <p id="egyptTime">--:--:--</p>
+
+    </div>
+
+</section>
+<section class="vacation">
+
+    <div class="box full">
+
+        <h2>🏖️ Programul Vacanței</h2>
+
+        <ul class="timeline">
+
+            <li>
+                <strong>05 Aug</strong><br>
+                ✈️ Plecare din România
+            </li>
+
+            <li>
+                <strong>06 Aug</strong><br>
+                🏨 Check-in & Cocktail
+            </li>
+
+            <li>
+                <strong>07 Aug</strong><br>
+                🤿 Snorkeling
+            </li>
+
+            <li>
+                <strong>08 Aug</strong><br>
+                🏜️ Safari în deșert
+            </li>
+
+            <li>
+                <strong>09 Aug</strong><br>
+                🏖️ Relaxare la piscină
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<section class="checklist">
+
+    <div class="box full">
+
+        <h2>🧳 Checklist Bagaje</h2>
+
+        <label><input type="checkbox"> Pașaport</label>
+
+        <label><input type="checkbox"> Bilete avion</label>
+
+        <label><input type="checkbox"> Costume de baie</label>
+
+        <label><input type="checkbox"> Cremă SPF</label>
+
+        <label><input type="checkbox"> Ochelari de soare</label>
+
+        <label><input type="checkbox"> Încărcător telefon</label>
+
+        <label><input type="checkbox"> Bani / Card</label>
+
+    </div>
+
+</section>
+
+<section class="gallery">
+
+    <h2>📸 Egipt</h2>
+
+    <div class="images">
+
+        <img src="background.jpg" alt="Egipt">
+
+        <img src="background.jpg" alt="Egipt">
+
+        <img src="background.jpg" alt="Egipt">
+
+    </div>
+
+</section>
+
+<section class="map">
+
+    <h2>📍 Hurghada</h2>
+
+    <iframe
+        src="https://www.google.com/maps?q=Hurghada,Egypt&output=embed"
+        loading="lazy">
+    </iframe>
+
+</section>
+
+<footer>
+
+    ❤️ Alex & Flory • Ionică & Oana ❤️
+
+    <br><br>
+
+    🇪🇬 Ne vedem în Egipt! 🇪🇬
+
+</footer>
+
+<button id="musicBtn">
+
+🎵 Muzică
+
+</button>
+
+<audio id="music" loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
